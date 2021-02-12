@@ -19,7 +19,8 @@ from platzigram import views
 
 urlpatterns = [
     path('hello-world', views.hello_world),
-    path('time', views.time)
+    path('time', views.time),
+    path('hi', views.hi)
 ]
 
 

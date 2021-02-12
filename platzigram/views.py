@@ -7,3 +7,8 @@ def hello_world(request):
 def time(request):
   now = datetime.now().strftime('%b %dth, %Y - %H:%M hs')
   return HttpResponse("Que onda!. La hora es: {}".format(str(now)))
+
+def hi(request):
+  import pdb # Add a debugger for request
+  pdb.set_trace()
+  return HttpResponse("Hola!!")
