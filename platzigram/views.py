@@ -23,3 +23,12 @@ def sort_numbers(request):
     'message': 'Integer sorted successfully'
   }
   return HttpResponse(json.dumps(data, indent = 2), content_type = 'application/json')
+
+
+def hello(request, name, age):
+  if age < 18:
+    message = "Sorry {}, you are not allowed here".format(name)
+  else:
+    message = 'Hello {}!, Welcome to Platzigram!'.format(name)
+
+  return HttpResponse(message)
