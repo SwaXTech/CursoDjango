@@ -22,4 +22,4 @@ def sort_numbers(request):
     'numbers': numbers,
     'message': 'Integer sorted successfully'
   }
-  return HttpResponse(json.dumps(data), content_type = 'application/json')
+  return HttpResponse(json.dumps(data, indent = 2), content_type = 'application/json')
