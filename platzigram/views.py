@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from datetime import datetime
+import json
 
 def hello_world(request):
   return HttpResponse("Hello, world!")
@@ -16,4 +17,9 @@ def hi(request):
 def sort_numbers(request):
   numbers = list(eval(request.GET['numbers']))
   numbers.sort() 
-  return HttpResponse(str(numbers), content_type = 'application/json')
+  data = {
+    'status': 'ok',
+    'numbers': numbers,
+    'message': 'Integer sorted successfully'
+  }
+  return HttpResponse(json.dumps(data), content_type = 'application/json')
