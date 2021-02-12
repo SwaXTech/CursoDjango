@@ -16,4 +16,4 @@ def hi(request):
 def sort_numbers(request):
   numbers = list(eval(request.GET['numbers']))
   numbers.sort() 
-  return HttpResponse(str(numbers))
+  return HttpResponse(str(numbers), content_type = 'application/json')
