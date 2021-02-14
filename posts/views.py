@@ -3,27 +3,40 @@ from datetime import datetime
 
 posts = [
   {
-    'name': 'Mont Blac',
-    'user': "Yésica Cortéz",
+    'title': 'Mont Blac',
+    'user': {
+      'name': "Yésica Cortéz",
+      'picture': 'https://picsum.photos/200/200/?image=1027'
+    },
     'timestamp': datetime.now().strftime('%b %dth, %Y - %H:%M hs'),
     'picture':  'https://picsum.photos/200/200/?image=1036'
   },
 
   {
-    'name': 'Vía Lactea',
-    'user': "C. Vander",
+    'title': 'Vía Lactea',
+    'user': {
+      'name': "Christian Van der Henst",
+      'picture': 'https://picsum.photos/200/200/?image=1005'
+    },
     'timestamp': datetime.now().strftime('%b %dth, %Y - %H:%M hs'),
     'picture': 'https://picsum.photos/200/200/?image=903'
   },
 
   {
-    'name': 'Nuevo Auditorio',
-    'user': "Thespianartist",
+    'title': 'Nuevo Auditorio',
+    'user': {
+      'name': "Uriel (thespianartist)",
+      'picture': 'https://picsum.photos/200/200/?image=883'
+    },
     'timestamp': datetime.now().strftime('%b %dth, %Y - %H:%M hs'),
     'picture': 'https://picsum.photos/200/200/?image=1076'
   }
 ]
 
 def list_posts(request):
-  return render(request, 'feed.html')
+  return render(request, 'feed.html', {
+    
+    'posts': posts
+
+  })
 
