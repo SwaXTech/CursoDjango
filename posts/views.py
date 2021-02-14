@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 from datetime import datetime
 
 posts = [
@@ -25,14 +25,5 @@ posts = [
 ]
 
 def list_posts(request):
-  content = []
-  for post in posts:
-    content.append("""
-    
-      <p><strong>{name}</strong></p>
-      <p><small>{user} - <i>{timestamp}</i></small></p>
-      <figure><img src="{picture}"/></figure>
-    """.format(**post))
-
-  return HttpResponse('<br>'.join(content))
+  return render(request, 'feed.html')
 

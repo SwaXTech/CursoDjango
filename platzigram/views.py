@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from datetime import datetime
 import json
 
+
 def hello_world(request):
   return HttpResponse("Hello, world!")
 
