@@ -4,6 +4,9 @@ from django.db import models # Nos permite interactuar con el ORM
 
 class User(models.Model):
 
+
+  # Django ya agrega un id
+
   email       = models.EmailField(unique = True)
   password    = models.CharField(max_length = 100)
   first_name  = models.CharField(max_length = 100)
@@ -12,6 +15,7 @@ class User(models.Model):
   birthdate   = models.DateField(blank = True, null = True)
   created     = models.DateTimeField(auto_now_add = True) # Fecha en la que se agregó
   modified    = models.DateTimeField(auto_now = True)    # Fecha en la que se editó
+  is_admin    = models.BooleanField(default = False)
 
 
   ## Posterior a la creación de esta clase, es necesario realizar la migración. (python manage.py makemigrations) 
