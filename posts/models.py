@@ -14,7 +14,12 @@ class User(models.Model):
   modified    = models.DateTimeField(auto_now = True)    # Fecha en la que se editó
 
 
-  ## Posterior a la creación de esta clase, es necesario realizar la migración. (python manage.py makemigrations)
+  ## Posterior a la creación de esta clase, es necesario realizar la migración. (python manage.py makemigrations) 
+  ## Luego migrar a la base con python manage.py migrate
+  ## Se creará un archivo de migración (0001_initial.py) que permite trackear los cambios en la base
+
+  ## Makemigrations --> Busca los cambios en nuestro modelo y lo pasa a un archivo
+  ## Migrate --> Implementa los cambios a la DB
 
 
 
