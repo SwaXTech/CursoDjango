@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib import admin
 from platzigram import views as local_views
 from posts import views as posts_views
 
@@ -25,6 +26,7 @@ urlpatterns = [
     path('sort-numbers', local_views.sort_numbers),
     path('hello/<str:name>/<int:age>/', local_views.hello),
     path('posts/', posts_views.list_posts),
+    path('admin/', admin.site.urls)
 ]
 
 

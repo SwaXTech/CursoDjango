@@ -41,3 +41,13 @@ for user in Users:
   obj = User.objects.create(**user)
   print("Object #{}: Added Successfully".format(obj.pk))
 
+
+## For creating an auth user:
+
+## Open shell
+
+## guardará la contraseña encriptada
+
+from django.contrib.auth.models import User
+
+u = User.objects.create_user(username = "Yesica", password = 'admin123')
