@@ -40,3 +40,4 @@ users = [
 for user in Users:
   obj = User.objects.create(**user)
   print("Object #{}: Added Successfully".format(obj.pk))
+
