@@ -11,6 +11,17 @@ class ProfileAdmin(admin.ModelAdmin):
 
   fieldsets = (
     ('Profile', {
-      'fields': (('user', 'picture'), ('phone_number', 'website')),
+      'fields': ('user', 'picture'),
     }),
+    ('Extra Info', {
+      'fields': (('website', 'phone_number'), ('biography'))
+    }),
+    ('Metadata', {
+      'fields': ('created', 'modified')
+    }
+    )
   )
+
+  readonly_fields = ('created', 'modified')
+
+  
