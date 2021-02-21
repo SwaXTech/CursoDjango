@@ -1,5 +1,7 @@
 secret_key.py
 
+/media/
+
 # Django #
 *.log
 *.pot
