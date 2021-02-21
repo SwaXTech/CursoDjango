@@ -3,4 +3,5 @@ from users.models import Profile
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-  pass
+  list_display = ('pk', 'user', 'phone_number', 'website', 'picture')
+
