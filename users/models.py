@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
-
 class Profile(models.Model):
   """Proxy model that extends the base data with other information"""
   user         = models.OneToOneField(User, on_delete = models.CASCADE)
